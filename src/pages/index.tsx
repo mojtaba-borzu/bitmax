@@ -11,32 +11,18 @@ const IndexPage: NextPage = () => {
   const [listAsset, setListAsset] = useState([]);
   const [numCountList, setNumCountList] = useState(6);
   const [messageHistory, setMessageHistory] = useState<any>([]);
-  const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
+  const { lastMessage } = useWebSocket(socketUrl);
 
   useEffect(() => {
     if (lastMessage !== null && messageHistory.length <= 2) {
       setMessageHistory([...messageHistory, lastMessage]);
     }
-
-    // splice(index, 1, item);
-
     if (
       lastMessage !== null &&
       messageHistory.length == 3 &&
       listAsset[1] &&
       JSON.parse(lastMessage.data).data
     ) {
-      // let f = listAsset.filter(
-      //   (item) =>
-      //     JSON.parse(lastMessage.data).data[0].price != "" &&
-      //     JSON.parse(lastMessage.data).data[0].price != undefined &&
-      //     JSON.parse(lastMessage.data).data[0].price != null &&
-      //     item.symbol == JSON.parse(lastMessage.data).data[0].symbol &&
-      //     item.price < JSON.parse(lastMessage.data).data[0].price
-      // );
-
-      // console.log(f);
-
       let b;
       listAsset
         .filter(
