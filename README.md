@@ -1,25 +1,13 @@
-# Redux Toolkit TypeScript Example
+# nextjs and typeScript and tailwind
 
-This example shows how to integrate Next.js with [Redux Toolkit](https://redux-toolkit.js.org).
+# for install
 
-The **Redux Toolkit** is a standardized way to write Redux logic (create actions and reducers, setup the store with some default middlewares like redux devtools extension). This example demonstrates each of these features with Next.js
+yarn add
+or
+npm install
 
-## Deploy your own
+# this is project for test and learnig
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+# the method worked
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-redux&project-name=with-redux&repository-name=with-redux)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-redux with-redux-app
-# or
-yarn create next-app --example with-redux with-redux-app
-# or
-pnpm create next-app -- --example with-redux with-redux-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Using the WebSocket, list the initial data, then with the update of each asset from the server, the data is updated
