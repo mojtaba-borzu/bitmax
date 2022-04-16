@@ -3,6 +3,7 @@ import Head from "next/head";
 import type { NextPage } from "next";
 import React, { useState, useCallback, useEffect } from "react";
 import useWebSocket, { ReadyState } from "react-use-websocket";
+import { ScaleLoader } from "react-spinners";
 
 const IndexPage: NextPage = () => {
   const [socketUrl, setSocketUrl] = useState(
@@ -85,37 +86,44 @@ const IndexPage: NextPage = () => {
         <div className="py-[20px] w-full flex justify-center">
           {`All Assets : ${numCountList - 1}`}
         </div>
-        <table className="">
-          <thead className="rounded-t-xl">
-            <tr className="border text-center rounded-t-xl">
-              <th className="border-r w-[100px]">coin</th>
-              <th className="border-r w-[100px]">price</th>
-              <th className="border-r w-[100px]">side</th>
-            </tr>
-          </thead>
-          <tbody>
-            {listAsset.slice(1, numCountList).map((item, idx) => (
-              <tr key={idx}>
-                <td className="">
-                  <div className="border-l border-t border-b rounded-l-xl  h-[50px] flex items-center justify-center">
-                    {item.symbol}
-                  </div>
-                </td>
-                <td className="">
-                  <div className=" border-t border-b h-[50px] flex items-center justify-center">
-                    {item.price}
-                  </div>
-                </td>
-                <td className="">
-                  {" "}
-                  <div className="border-r border-t border-b rounded-r-xl  h-[50px] flex items-center justify-center">
-                    {item.side}
-                  </div>
-                </td>
+        {!listAsset[1] && (
+          <div className="w-full h-[250px]  flex justify-center items-center">
+            <ScaleLoader color="#3997e9" height={50} width={5} />
+          </div>
+        )}
+        {listAsset[1] && (
+          <table className="">
+            <thead className="rounded-t-xl">
+              <tr className="border text-center rounded-t-xl">
+                <th className="border-r w-[100px]">coin</th>
+                <th className="border-r w-[100px]">price</th>
+                <th className="border-r w-[100px]">side</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {listAsset.slice(1, numCountList).map((item, idx) => (
+                <tr key={idx}>
+                  <td className="">
+                    <div className="border-l border-t border-b rounded-l-xl  h-[50px] flex items-center justify-center">
+                      {item.symbol}
+                    </div>
+                  </td>
+                  <td className="">
+                    <div className=" border-t border-b h-[50px] flex items-center justify-center">
+                      {item.price}
+                    </div>
+                  </td>
+                  <td className="">
+                    {" "}
+                    <div className="border-r border-t border-b rounded-r-xl  h-[50px] flex items-center justify-center">
+                      {item.side}
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );
