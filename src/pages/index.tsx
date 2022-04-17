@@ -72,7 +72,7 @@ const IndexPage: NextPage = () => {
             }
             className="border w-[150px] h-[40px] rounded-xl"
           >
-            Add +5 Column
+            Add +5 row
           </button>{" "}
           <button
             onClick={() =>
@@ -80,7 +80,7 @@ const IndexPage: NextPage = () => {
             }
             className="border w-[150px] h-[40px] rounded-xl"
           >
-            Add -5 Column
+            Add -5 row
           </button>
         </div>
         <div className="py-[20px] w-full flex justify-center">
